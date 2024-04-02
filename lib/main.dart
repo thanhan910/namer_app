@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-// This is the theme of your application.
+          // This is the theme of your application.
           //
           // TRY THIS: Try running your application with "flutter run". You'll see
           // the application has a purple toolbar. Then, without quitting the app,
@@ -53,7 +53,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Text('A random idea:'),
+          Text('A random AWESOME idea:'), // ← Example change.
           Text(appState.current.asLowerCase),
         ],
       ),
