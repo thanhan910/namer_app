@@ -75,6 +75,7 @@ class MyHomePage extends StatelessWidget {
             BigCard(pair: pair),
             SizedBox(height: 10),
             Row(
+              mainAxisSize: MainAxisSize.min, // try changing to min
               children: [
                 ElevatedButton(
                   onPressed: () {
