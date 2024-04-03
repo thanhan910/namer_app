@@ -78,21 +78,17 @@ class MyHomePage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min, // try changing to min
               children: [
                 // Like Button
-                ElevatedButton(
+                ElevatedButton.icon(
                   onPressed: () {
                     print('button pressed!');
                     appState.toggleFavorite();
                   },
-                  child: Row(
-                    children: [
-                      Icon(
-                        appState.favorites.contains(pair)
-                            ? Icons.favorite
-                            : Icons.favorite_border,
-                      ),
-                      Text('Like'),
-                    ],
+                  icon: Icon(
+                    appState.favorites.contains(pair)
+                        ? Icons.favorite
+                        : Icons.favorite_border,
                   ),
+                  label: Text('Like'),
                 ),
                 SizedBox(width: 10),
                 // Next Button
