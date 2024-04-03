@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
         page = GeneratorPage();
         break;
       case 1:
-        page = Placeholder();
+        page = FavouritesPage();
         break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
@@ -195,6 +195,30 @@ class BigCard extends StatelessWidget {
           semanticsLabel: "${pair.first} ${pair.second}",
         ),
       ),
+    );
+  }
+}
+
+class FavouritesPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+    var pairs = appState.favorites;
+
+    return ListView.builder(
+      itemCount: pairs.length,
+      itemBuilder: (context, index) {
+        return ListTile(
+          title: Text(pairs[index].asLowerCase),
+          onTap: () {
+            print('tapped');
+            appState.current = pairs[index];
+            print('current: ${appState.current}');
+            Navigator.of(context).pop();
+            print('popped');
+          },
+        );
+      },
     );
   }
 }
