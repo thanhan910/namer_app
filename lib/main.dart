@@ -49,7 +49,7 @@ class MyAppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  var favorites = <WordPair>{}; // empty set
+  var favorites = <WordPair>[]; // empty list
 
   void toggleFavorite() {
     if (favorites.contains(current)) {
