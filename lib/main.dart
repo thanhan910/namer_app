@@ -209,15 +209,17 @@ class FavouritesPage extends StatelessWidget {
       itemCount: pairs.length,
       itemBuilder: (context, index) {
         return ListTile(
-          title: Text(pairs[index].asLowerCase),
-          onTap: () {
-            print('tapped');
-            appState.current = pairs[index];
-            print('current: ${appState.current}');
-            Navigator.of(context).pop();
-            print('popped');
-          },
-        );
+            leading: Icon(Icons.favorite),
+            title: Text(pairs[index].asLowerCase),
+            trailing: IconButton(
+              icon: Icon(Icons.delete),
+              onPressed: () {
+                // Set the current pair to the one being deleted
+                appState.current = pairs[index];
+                // Remove the current pair from the list
+                appState.toggleFavorite();
+              },
+            ));
       },
     );
   }
