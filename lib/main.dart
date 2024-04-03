@@ -74,12 +74,16 @@ class MyHomePage extends StatelessWidget {
           children: [
             BigCard(pair: pair),
             SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                print('button pressed!');
-                appState.getNext();
-              },
-              child: Text('Next'),
+            Row(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    print('button pressed!');
+                    appState.getNext();
+                  },
+                  child: Text('Next'),
+                ),
+              ],
             ),
           ],
         ),
