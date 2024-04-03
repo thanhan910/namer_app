@@ -83,7 +83,16 @@ class MyHomePage extends StatelessWidget {
                     print('button pressed!');
                     appState.toggleFavorite();
                   },
-                  child: Text('Like'),
+                  child: Row(
+                    children: [
+                      Icon(
+                        appState.favorites.contains(pair)
+                            ? Icons.favorite
+                            : Icons.favorite_border,
+                      ),
+                      Text('Like'),
+                    ],
+                  ),
                 ),
                 SizedBox(width: 10),
                 // Next Button
